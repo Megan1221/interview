@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML Parser</title>
+</head>
+
+<body>
+  <script src="./defer.js" defer></script>
+  <script src="./async.js" async></script>
+  <script>
+    /* eslint-disable no-console */
+    console.log('script Start')
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DCL')
+    })
+    document.addEventListener('load', () => {
+      console.log('Load')
+    })
+  </script>
+</body>
+
+</html>
