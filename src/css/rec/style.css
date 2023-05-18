@@ -1,0 +1,36 @@
+.outer {
+  display: flex;
+  align-items: flex-end;
+  height:400px;
+  width: 400px;
+}
+
+.inner { 
+  width: 30px;
+  margin-right: 10px;
+}
+
+#a{
+  height: 30%;
+  background-color: #f00;
+}
+
+#b{
+  height: 80%;
+  background-color: #ddd;
+}
+
+#c{
+  height: 70%;
+  background-color: #0fd;
+}
+
+#d{
+  height: 60%;
+  background-color: #ff0;
+}
+
+#e{
+  height: 90%;
+  background-color: #234;
+}

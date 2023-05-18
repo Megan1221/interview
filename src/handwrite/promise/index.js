@@ -102,6 +102,9 @@ class MyPromise {
 }
 // all,race, allSettled, any
 const all = (promises) => {
+  // 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
+  // 如果所有Promise都成功，则返回成功结果数组
+  // 如果有一个Promise失败，则返回这个失败结果
   const res = []
   let cnt = 0
   return new MyPromise((resolve, reject) => {
@@ -125,6 +128,8 @@ const all = (promises) => {
   })
 }
 const race = (promises) => {
+  // 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
+  // 哪个Promise最快得到结果，就返回那个结果，无论成功失败
   return new MyPromise((resolve, reject) => {
     promises.forEach((p) => {
       if (p instanceof MyPromise) {
@@ -141,6 +146,8 @@ const race = (promises) => {
   })
 }
 const allSettled = (promises) => {
+  // 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
+  // 把每一个Promise的结果，集合成数组，返回
   const res = []
   const cnt = 0
   return new MyPromise((resolve, reject) => {
@@ -162,6 +169,9 @@ const allSettled = (promises) => {
   })
 }
 const any = (promises) => {
+  // 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
+  // 如果有一个Promise成功，则返回这个成功结果
+  // 如果所有Promise都失败，则报错
   const res = []
   let cnt = 0
   return new MyPromise((resolve, reject) => {
