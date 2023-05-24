@@ -1,0 +1,37 @@
+.container {
+  width: 300px;
+  height: 300px;
+}
+ul {
+  padding: 0;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+  text-align:center;
+  line-height: 90px;
+  border-radius: 5px;
+  background-color: skyblue;
+
+  width: 30%;
+  height: 30%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  float: left;
+}
+
+li:nth-of-type(3n){
+  margin-right:0
+}
+li:nth-of-type(n+7){
+  margin-bottom:0
+}
+
+
+/* 
+  这里需要给每个盒子设置固定的宽高，为了让它自动换行，可以使用float来实现
+  由于子元素的浮动，形成了BFC，所以父元素ul使用overflow:hidden；来消除浮动带来的影响
+*/

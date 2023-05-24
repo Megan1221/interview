@@ -1,0 +1,62 @@
+.box {
+  width: 300px;
+  border: 1px black solid;
+  background-color: skyblue;
+  overflow: hidden
+}
+
+div #hide {
+  cursor: pointer
+}
+
+/* 
+.box>div:first-child {
+  cursor: pointer
+} */
+
+
+.hide1 {
+  opacity: 0;
+}
+.hide2 {
+  visibility: hidden;
+}
+
+.hide3 {
+  display: none;
+}
+
+.hide4 {
+  width:0;
+  height:0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.hide5 {
+  transform: scale(0)
+}
+
+.hide6 {
+  transform: translate(-9999px)
+}
+
+.hide7 {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.hide8 {
+  clip-path: circle(0)
+}
+
+.hide9 {
+  z-index: -9999;
+}
+
+.hide10 {
+  color: rgba(0,0,0,0);
+}

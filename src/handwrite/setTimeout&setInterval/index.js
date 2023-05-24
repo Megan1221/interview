@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import mySetTimeout from '../mySetTimeout.js'
-import mySetInterval from '../mySetInterval.js'
+import mySetInterval from './mySetInterval.js'
 
 window.mySetInterval = mySetInterval
 window.mySetTimeout = mySetTimeout

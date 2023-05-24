@@ -1,0 +1,134 @@
+/* ===水平居中=== */
+/* text-align + inline-block */
+.parent1 {
+  border: solid 1px black;
+  text-align: center;
+}
+.child1 {
+  background-color: skyblue;
+  display: inline-block;
+  text-align: left;
+}
+/* table + margin */
+.parent2 {
+  border: solid 1px black;
+
+}
+.child2 {
+  background-color: skyblue;
+  display:table;
+  width: 100px;
+  margin: 0 auto;
+  /* text-align: center; */
+}
+
+/* position+transform, 但会有高度塌陷问题 */
+.parent3 {
+  border: solid 1px black;
+  position: relative;
+}
+.child3 {
+  background-color: skyblue;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50&);
+}
+
+/* flex + justify-content */
+.parent4 {
+  border: solid 1px black;
+  display:flex;
+  justify-content: center;
+}
+.child4 {
+  background-color: skyblue; 
+}
+
+/* flex+ margin:auto */
+.parent5 {
+  border: solid 1px black;
+  display:flex;
+}
+.child5 {
+  background-color: skyblue;
+  margin: auto
+}
+
+
+/* ===============================垂直居中=============================== */
+/* table-cell + vertical-align */
+.vparent1 {
+  border: solid 1px black;
+  height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.vchild1 {
+  background-color: skyblue;
+}
+
+/* absolute + transform */
+.vparent2 {
+  border: solid 1px black;
+  height: 100px;
+  position: relative;
+}
+.vchild2 {
+  background-color: skyblue;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* flex + align-items */
+.vparent3 {
+  border: solid 1px black;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.vchild3 {
+  background-color: skyblue;
+}
+/* ===============================水平垂直居中=============================== */
+/* table + inline-block + text/vertical-align */
+.bparent1 {
+  border: solid 1px black;
+  height: 100px;
+  width: 200px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.bchild1 {
+  background-color: skyblue;
+  display:inline-block;
+}
+
+/* absolute + transform */
+.bparent2 {
+  border: solid 1px black;
+  height: 100px;
+  width: 200px;
+  position: relative;
+}
+.bchild2 {
+  background-color: skyblue;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* flex */
+.bparent3 {
+  border: solid 1px black;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bchild3 {
+  background-color: skyblue;
+}

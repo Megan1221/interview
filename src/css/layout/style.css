@@ -1,0 +1,105 @@
+/* float + overflow(BFC) */
+.parent1 {
+  border: 1px solid black;
+}
+.left1 {
+  background-color: skyblue;
+  float: left;
+  width: 100px;
+}
+.right1 {
+  background-color: grey;
+  /* 给右边的元素开启BFC使其不受float影响 */
+  overflow: hidden;
+}
+
+
+/* table */
+.parent2 {
+  border: 1px solid black;
+  width: 100%;
+  display: table;
+  /* 由于我们要固定左边的宽度，父级table应该使用布局优先，即table-layout(取值：auto内容优先、fixed表格布局优先): fixed */
+  table-layout: fixed;
+}
+.left2 {
+  background-color: skyblue;
+  width: 100px;
+  display: table-cell;
+  padding-riflex-basis
+}
+.right2 {
+  background-color: grey;
+  display: table-cell;
+}
+
+/* flex */
+.parent3 {
+  border: 1px solid black;
+  display: flex;
+}
+.left3 {
+  background-color: skyblue;
+  width: 100px;
+  margin-right: 20px;
+}
+.right3 {
+  background-color: grey;
+  /* 是1 1 0的简写，对应flex-grow，flex-shrink，flex-basis */
+  flex: 1
+}
+
+
+/* ===========================================等宽=========================================== */
+/* flex */
+/* table */
+.box1{
+  border: 1px black solid;
+  background-color: #F8E8F2;
+  width: 100%;
+  display: flex;
+}
+.column1 {
+  border:1px solid grey;
+  background-color: skyblue;
+  flex:1;
+}
+.column1+.column1{
+   margin-left:20px;
+}
+
+
+/* float */
+.box2{
+  border: 1px black solid;
+  background-color: #F8E8F2;
+  width: 200px;
+  margin-left: -20px;
+  /* overflow: hidden; */
+}
+.column2 {
+  border:1px solid grey;
+  background-color: skyblue;
+  float: left;
+  padding-left:20px;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+/* table */
+.box3{
+  border: 1px black solid;
+  background-color: #F8E8F2;
+  width: calc(100% + 20px);
+  display: table;
+  table-layout: fixed;
+  position: relative;
+  left: -20px;
+}
+.column3 {
+  border:1px solid grey;
+  background-color: skyblue;
+  display: table-cell;
+  padding-left:20px;
+}
+

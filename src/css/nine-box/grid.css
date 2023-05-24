@@ -1,0 +1,28 @@
+.container {
+  width: 300px;
+  height: 300px;
+}
+ul {
+  padding: 0;
+
+  display: grid;
+  width:100%;
+  height:100%;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 30% 30% 30%;
+  grid-gap: 5%;
+}
+
+li {
+  list-style: none;
+  text-align:center;
+  line-height: 90px;
+  border-radius: 5px;
+  background-color: skyblue;
+}
+
+/* 
+  grid-template-columns属性用来设置每一行中单个元素的宽度
+  grid-template-rows属性用来设置每一列中单个元素的高度
+  grid-gap属性用来设置盒子之间的间距
+*/

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position</title>
+</head>
+<style>
+  .container {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .item {
+    border: black solid 1px;
+    height:40px;
+  }
+  .static {
+    height: 20px
+  }
+  .absolute {
+    /* position: absolute; */
+    top:0px;
+    left:0px;
+  }
+  .relative {
+    /* position: relative; */
+    top:20px;
+    left:20px;
+  }
+  .sticky {
+    /* position: sticky; */
+    top:20px;
+  }
+
+</style>
+<body>
+  <div class="container">
+    <div class="item static">Static</div>
+    <div class="item absolute">Absolute</div>
+    <div class="item relative">Relative</div>
+    <div class="item sticky">Sticky</div>
+  </div>
+  
+</body>
+</html>
