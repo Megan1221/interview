@@ -32,7 +32,7 @@ export function deepClone(target) {
   }
   res = new target.__proto__.constructor()
   // 遍历实例属性
-  for (const i of Object.keys(target))
+  for (const i of Reflect.ownKeys(target))
     res[i] = deepClone(target[i])
   return res
 }
@@ -44,3 +44,5 @@ export function deepCloneJson(target) {
 export function deepCloneByAssign(target) {
   return Object.assign({}, target)
 }
+
+// Reflect.ownKeys会返回对象的所有自有属性，包括Symbol属性和不可枚举属性，但是不包括继承属性。
