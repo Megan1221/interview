@@ -4,11 +4,12 @@
  * Object: Array, Map, Set....
  */
 export function deepClone(target) {
-  // 边界
+  // 基本类型
   if (typeof target !== 'object' || target === null)
     return target
-  // 处理Object
+  // 处理引用类型
   let res
+  // 集合
   if (Array.isArray(target)) {
     res = []
     target.forEach((value, idx) => {
@@ -30,6 +31,26 @@ export function deepClone(target) {
     })
     return res
   }
+  // 函数
+  if (target instanceof Function) {
+    if (target.prototype) {
+      // 有prototype就是普通函数
+      res = function (...args) {
+        return target.apply(this, args)
+      }
+    }
+    else {
+      res = (...args) => target(...args)
+    }
+    return res
+  }
+  // Date
+  if (target instanceof Date)
+    return new Date(target - 0)
+  // Reg
+  if (target instanceof RegExp)
+    return new RegExp(target.source, target.flags)
+
   res = new target.__proto__.constructor()
   // 遍历实例属性
   for (const i of Reflect.ownKeys(target))
