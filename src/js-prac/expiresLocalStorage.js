@@ -1,26 +1,26 @@
-// 支持过期时间的localStorage 
-function initLocalStorage(){
+// 支持过期时间的localStorage
+function initLocalStorage() {
   localStorage.setItem = function (key, value, time) {
     const expiresTime = Date.now() + time * 1000
     const obj = {
       __data: value,
-      __expires: expiresTime
+      __expires: expiresTime,
     }
     Storage.prototype.setItem.call(localStorage, key, JSON.stringify(obj))
-  };
+  }
 
   localStorage.getItem = function (key) {
     const value = Storage.prototype.getItem.call(localStorage, key)
     if (typeof value === 'string') {
       const obj = JSON.parse(value)
       if (obj.__expires) {
-        if (obj.__expires >= Date.now()) {
+        if (obj.__expires >= Date.now())
           return obj.__data
-        } else {
+
+        else
           return null
-        }
       }
-    } 
+    }
     return value
   }
 }

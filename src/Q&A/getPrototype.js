@@ -11,4 +11,4 @@ console.log('isArray', Array.isArray(arr))
 console.log('constructor', arr.constructor)
 console.log('getPrototypeOf', Object.getPrototypeOf(arr))
 // 全能型
-console.log('Object.prototype.call', Object.prototype.toString.call(arr))
+console.log('Object.prototype.toString.call', Object.prototype.toString.call(arr))

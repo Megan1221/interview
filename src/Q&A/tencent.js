@@ -1,3 +1,4 @@
+// 腾讯笔试题（补充代码）
 // function checkWin(arr) {
 //   if (arr.length < 3)
 //     return false
@@ -67,7 +68,8 @@ const tictactoe = {
       for (let i = 1; i < arr.length; i++)
         diff.push(arr[i] - arr[i - 1])
 
-      let cnt = 1; let cur = diff[0]
+      let cnt = 1
+      let cur = diff[0]
       for (let j = 1; j < diff.length; j++) {
         if (diff[j] === cur) {
           cnt++
